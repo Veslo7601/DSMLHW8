@@ -1,7 +1,6 @@
 from ultralytics import YOLO
 
 def main():
-    # Завантажуємо модель
     model = YOLO('yolov10m.pt') 
 
     results = model.train(
