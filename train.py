@@ -6,18 +6,18 @@ def main():
 
     results = model.train(
         data='data.yaml',
-        epochs=100,              # 40 може бути замало для стабілізації mAP
+        epochs=100,              
         imgsz=640,               
-        batch=16,                # 64 може "з'їсти" всю VRAM на m-моделі, 32 — безпечніше для стабільності
+        batch=16,                
         device=0,                
-        workers=12,               # Використовуй потужність Ryzen для підготовки кадрів
-        optimizer='AdamW',       # AdamW зазвичай краще показує себе у складних інтер'єрних сценах
-        patience=10,             # Early stopping: якщо модель не покращується 10 епох — стоп
+        workers=12,              
+        optimizer='AdamW',       
+        patience=10,             
         save=True,
         project='indoor_projects',
         name='yolov10m_optimized',
-        cos_lr=True,             # Косинусний розклад навчання для кращої збіжності
-        augment=True             # Обов'язково для детекції в приміщеннях (світло, тіні)
+        cos_lr=True,             
+        augment=True             
     )
 
 if __name__ == '__main__':
